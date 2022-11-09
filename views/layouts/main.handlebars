@@ -3,37 +3,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
-    <link
-      rel="stylesheet"
-      href="../../style/style.css"
-    />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
 
     <nav
-      class="nav"
+      class="navbar navbar-expand-lg bg-light"
     >
       <div
-        class=""
+        class="container-fluid"
       >
-        <a href="/" class="">
+        <a href="/" class="navbar-brand" href="#">
           <img
             src=""
             class=""
-          />
+          />HOME
         </a>
         <div class="">
           {{#if loggedIn}}
             <button
               id="logout"
-              class=""
+              class="btn btn-sm btn-outline-secondary"
               type="button"
             >
               Logout
             </button>
             <button
               id="profile"
-              class=""
+              class="btn btn-sm btn-outline-secondary"
               onclick="location.href='/profile/{{sessionId}}'"
               type="button"
             >
@@ -42,7 +39,7 @@
 
           {{else}}
             <button
-              class=""
+              class="btn btn-sm btn-outline-secondary"
               onclick="location.href='/login'"
               type="button"
             >
@@ -51,7 +48,7 @@
           {{/if}}
           {{#unless loggedIn}}
             <button
-              class=""
+              class="btn btn-sm btn-outline-secondary"
               onclick="location.href='/signup'"
               type="button"
             >
@@ -59,12 +56,8 @@
             </button>
           {{/unless}}
 
-          <button
-            data-collapse-toggle="mega-menu"
-            type="button"
-            class=""
-          >
-            <span class="">Open main menu</span>
+          <button class="btn btn-sm btn-outline-secondary" type="button">
+            <span class="navbar-text">Open main menu</span>
           </button>
         </div>
       </div>
@@ -79,5 +72,6 @@
       <script src="../../controllers/api/logout.js"></script>
     {{/if}}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
