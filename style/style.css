@@ -1,0 +1,14 @@
+body {
+    display:flex;
+    flex-direction: column;
+}
+
+.main {
+    padding: 150px;
+    background-color: rgb(220, 255, 163);
+}
+
+.blogpost {
+    width: 150px;
+    height: 50px;
+}

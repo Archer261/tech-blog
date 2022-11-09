@@ -1,12 +1,83 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Example App</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      rel="stylesheet"
+      href="../../style/style.css"
+    />
+  </head>
+  <body>
 
-    {{{body}}}
+    <nav
+      class="nav"
+    >
+      <div
+        class=""
+      >
+        <a href="/" class="">
+          <img
+            src=""
+            class=""
+          />
+        </a>
+        <div class="">
+          {{#if loggedIn}}
+            <button
+              id="logout"
+              class=""
+              type="button"
+            >
+              Logout
+            </button>
+            <button
+              id="profile"
+              class=""
+              onclick="location.href='/profile/{{sessionId}}'"
+              type="button"
+            >
+              Profile
+            </button>
 
-</body>
+          {{else}}
+            <button
+              class=""
+              onclick="location.href='/login'"
+              type="button"
+            >
+              Login
+            </button>
+          {{/if}}
+          {{#unless loggedIn}}
+            <button
+              class=""
+              onclick="location.href='/signup'"
+              type="button"
+            >
+              Sign Up
+            </button>
+          {{/unless}}
+
+          <button
+            data-collapse-toggle="mega-menu"
+            type="button"
+            class=""
+          >
+            <span class="">Open main menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      {{{body}}}
+      
+    </main>
+    {{#if loggedIn}}
+      <script src="../../controllers/api/logout.js"></script>
+    {{/if}}
+
+  </body>
 </html>
