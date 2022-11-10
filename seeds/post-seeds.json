@@ -1,0 +1,50 @@
+[
+    {
+      "name": "French Bread with Brie Cheese",
+      "content": "French baguette with warm brie",
+      "date_created": "8/12/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Cheese Plate with Spanish Chorizo",
+      "content":
+        "Manchego, Iberico, Cabrales, fig jam, grapes, pecans, and Spanich Chorizo",
+      "date_created": "12/29/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Fish Tacos",
+      "content":
+        "Battered/fried fish, corn tortillas, fresh slaw with jalepenos and cilantro, pickled red onion",
+      "date_created": "6/3/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Tropical Fruit Salad",
+      "content": "Guava, papaya, pineapple, mango, and star fruit",
+      "date_created": "3/8/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Pork Gyoza",
+      "content":
+        "Homemade japanese dumplings stuffed with a pork and green onion filling, served with peanut dipping sauce",
+      "date_created": "6/23/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Yebeg Tibs with Injera Bread",
+      "content":
+        "Marinated lamb dish with rosemary, garlic, onion, tomato, jalapeño and the East African spice berbere",
+      "date_created": "8/22/22",
+      "user_id:":"1"
+    },
+    {
+      "name": "Cape Malay Curry",
+      "content": "Chicken and vegitable curry dish with basmati rice",
+      "date_created": "10/3/22",
+      "user_id:":"1"
+    }
+  ]
+  
+  

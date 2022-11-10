@@ -1,77 +1,37 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/style.css" />
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
 
-    <nav
-      class="navbar navbar-expand-lg bg-light"
-    >
-      <div
-        class="container-fluid"
-      >
-        <a href="/" class="navbar-brand" href="#">
-          <img
-            src=""
-            class=""
-          />HOME
-        </a>
-        <div class="">
-          {{#if loggedIn}}
-            <button
-              id="logout"
-              class="btn btn-sm btn-outline-secondary"
-              type="button"
-            >
-              Logout
-            </button>
-            <button
-              id="profile"
-              class="btn btn-sm btn-outline-secondary"
-              onclick="location.href='/profile/{{sessionId}}'"
-              type="button"
-            >
-              Profile
-            </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/jass.css">
+</head>
 
-          {{else}}
-            <button
-              class="btn btn-sm btn-outline-secondary"
-              onclick="location.href='/login'"
-              type="button"
-            >
-              Login
-            </button>
-          {{/if}}
-          {{#unless loggedIn}}
-            <button
-              class="btn btn-sm btn-outline-secondary"
-              onclick="location.href='/signup'"
-              type="button"
-            >
-              Sign Up
-            </button>
-          {{/unless}}
-
-          <button class="btn btn-sm btn-outline-secondary" type="button">
-            <span class="navbar-text">Open main menu</span>
-          </button>
-        </div>
-      </div>
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+    Tech Blog
+    </h1>
+ 
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
     </nav>
-
-    <main>
-
-      {{{body}}}
-      
-    </main>
-    {{#if loggedIn}}
-      <script src="../../controllers/api/logout.js"></script>
     {{/if}}
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </body>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
 </html>

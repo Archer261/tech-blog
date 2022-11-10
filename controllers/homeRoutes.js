@@ -1,62 +1,32 @@
-const router = require("express").Router();
-const { ExpressHandlebars } = require("express-handlebars");
-const session = require("express-session");
-const {  User } = require("../models/User");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get("/", async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-     const sessionId = req.session.id;
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      order: [['name', 'ASC']],
+    });
 
-    console.log("session email: " + req.session.email);
+    const users = userData.map((project) => project.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render("homepage", {
-      sessionId,
-      sessionEmail: req.session.email,
-      loggedIn: req.session.loggedIn,
+    res.render('homepage', {
+      users,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get("/profile/:sessionId", withAuth, async (req, res) => {
-  console.log(req.session.email);
-
-  const userData = await User.findOne(
-    { where: { email: req.session.email } },
-    { attributes: { exclude: ["password"] }}
-  );
-  const sessionId = req.session.id;
-  const user = userData.get({ plain: true });
-  console.log(user);
-
-  res.render("profile", {
-    ...user,
-    sessionId,
-    loggedIn: true,
-  });
-});
-
-// Get signup template
-router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
     return;
   }
 
-  res.render("signUp");
+  res.render('login');
 });
 
-// Get login template
-router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("signIn");
-});
-module.exports = router
+module.exports = router;
