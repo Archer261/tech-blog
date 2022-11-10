@@ -11,15 +11,26 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-    Tech Blog
-    </h1>
- 
+  
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Tech Blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
     {{#if logged_in}}
-    <nav>
+
       <button class="btn" id="logout">logout</button>
-    </nav>
+ 
     {{/if}}
+    </div>
+    </div>
+  </div>
+    </nav>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
